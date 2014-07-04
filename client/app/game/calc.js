@@ -42,12 +42,12 @@ app.factory('Calc', function () {
     },
 
     characterAccuracy: function (keyStrokes, errors) {
-      return (((keyStrokes / (keyStrokes + errors)) + 0.00001) * 100).toFixed(2);
+      return (((keyStrokes / (keyStrokes + errors)) + 0.00001) * 100).toFixed(0);
     },
 
 
     netWordsPerMinute: function (accuracy, wpm) {
-      return Math.round(accuracy * wpm) / 100;
+      return (Math.round(accuracy * wpm) / 100).toFixed(0);
     },
 
     totalErrors: function (errors, m) {
