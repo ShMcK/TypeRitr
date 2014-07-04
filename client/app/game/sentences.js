@@ -9,7 +9,6 @@ app.factory('Sentences', function (Calc) {
     },
 
     getSentence: function () {
-      console.log(count);
       count++;
       var sentences = [
         "The quick brown fox jumps over the lazy dog.",

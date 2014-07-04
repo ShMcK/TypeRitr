@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Letters', function (Words, Sentences) {
+app.factory('Letters', function (Words, Sentences, $rootScope) {
 
   var keyTimeStart = 0,
     keyTimeEnd = 0,
@@ -60,13 +60,41 @@ app.factory('Letters', function (Words, Sentences) {
         finalKeyRecord[String.fromCharCode(a + i)] = []
       }
       _.forEach(keyRecord, function (letter) {
-        finalKeyRecord[letter].push(this.keyTimeAverage(KeyRecord[letter]));
+        finalKeyRecord[letter].push(this.keyTimeAverage(keyRecord[letter]));
         return finalKeyRecord;
       });
     },
 
-    showKeyStats: function () {
-      console.log('Show key stats.');
+    showKeyStats: function (m) {
+      this.finalKeyAverages(m);
+    },
+
+    finalTotalAverage: function (finalKeyAverages) {
+      var totalAverages = 0
+      _.forEach(finalKeyAverages, function (average) {
+        totalAverages += average;
+      });
+      return totalAverages / finalKeyAverages.length;
+    },
+
+
+    finalSTD: function (median, sample) {
+      var variance = 0;
+      _.forEach(sample, function (num) {
+        variance += Math.pow((median - num), 2);
+      });
+      variance = Math.sqrt(variance);
+      return variance;
+    },
+
+    colorKeys: function (keys, STD) {
+      var redList = [],
+          yellowList = [];
+      _.forEach(keys, function (num) {
+
+      });
     }
+
+
   };
 });

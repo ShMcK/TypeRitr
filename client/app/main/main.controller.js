@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', function ($scope, $location, Sentences, Words, Letters) {
+app.controller('MainCtrl', function ($scope, $rootScope, $location, Sentences, Words, Letters) {
 
   // Model
   var m = {
@@ -29,8 +29,8 @@ app.controller('MainCtrl', function ($scope, $location, Sentences, Words, Letter
     // Letters match?
     Letters.match(m, $event, $scope);
     if (m.gameOver) {
+      $rootScope.m = m;
       $location.path('/stats');
-      //Letters.showKeyStats();
     }
   };
 
