@@ -1,0 +1,140 @@
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  /* needed for setting pseudo-element z-index */
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+section span {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: #404d5b;
+  vertical-align: bottom;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+section span::before,
+section span::after {
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+// Link Braces
+/* Text scale */
+.in-progress span {
+  color: #d04c3f;
+  padding: 0 0.25em;
+  font-weight: 500;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  z-index: 10;
+  position: relative;
+  margin-left: -10px;
+}
+
+.in-progress span::before,
+.in-progress span::after {
+  position: absolute;
+  top: 0;
+  font-weight: 100;
+  font-size: 150%;
+  line-height: 1;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.in-progress span::before {
+  left: -0.1em;
+  content: '[';
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.in-progress span::after {
+  right: -0.1em;
+  content: ']';
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.in-progress span::before,
+.in-progress span::after {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+// Typing Styles
+
+.completed {
+  color: rgba(149, 165, 166, 0.3);
+}
+
+.word-completed {
+  background-color: rgba(149, 165, 166, 0.3);
+  font-weight: 500;
+}
+
+.current-letter {
+  background-color: rgba(149, 165, 166, 0.3);
+  font-weight: 800;
+  color: blue;
+}
+
+.keyInput {
+  border: 2px solid;
+  //border-bottom: 1px solid black;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  display: inline;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: white;
+  margin-right: none;
+}
+
+.keyInput:focus {
+  -moz-appearance: none;
+  outline: 0px none transparent;
+}
+
+.game {
+
+}
+
+.content h2 {
+  text-align: center;
+}
+
+.stats ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
