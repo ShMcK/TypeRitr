@@ -2,5 +2,5 @@
 
 angular.module('typeRiterApp')
   .controller('FinishedCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.selected = ['r', 's', 't', 'l'];
   });

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', function ($scope, Sentences, Words, Letters) {
+app.controller('MainCtrl', function ($scope, $location, Sentences, Words, Letters) {
 
   // Model
   var m = {
@@ -29,7 +29,7 @@ app.controller('MainCtrl', function ($scope, Sentences, Words, Letters) {
     // Letters match?
     Letters.match(m, $event, $scope);
     if (m.gameOver) {
-      alert('game over!');
+      $location.path('/stats');
       //Letters.showKeyStats();
     }
   };
